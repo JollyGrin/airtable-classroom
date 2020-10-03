@@ -1,0 +1,15 @@
+#nav {
+  margin: 1em;
+  display: flex;
+  justify-content: space-between;
+  font-size: 2rem;
+
+  & .nav__right > * {
+    margin: 0 0.5em;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-highlight;
+    }
+  }
+}

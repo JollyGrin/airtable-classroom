@@ -1,0 +1,22 @@
+body {
+  background-color: $color-back;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+* {
+  transition: all 0.25s ease-in-out;
+}
+
+@mixin title {
+  font-family: $font-header;
+  font-size: 2.75rem;
+}
+
+@mixin subtitle {
+  font-family: $font-reg;
+  font-size: 2.15rem;
+}
