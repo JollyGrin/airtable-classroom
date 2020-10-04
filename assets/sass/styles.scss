@@ -1,31 +1,65 @@
 $color-primary: #515070;
 $color-back: #f6f6f6;
 $color-highlight: #fc9073;
+$color-accent: #fdbc95;
+
 $font-header: 'Playfair Display', serif;
 $font-reg: 'Raleway', sans-serif;
 
 @import 'init.scss';
 @import 'nav.scss';
+@import 'hero.scss';
 
-#hero {
-  width: 800px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  @media (min-width: 800px) {
-    align-items: center;
-  }
-  @media (max-width: 800px) {
-    margin-left: 2em;
-    flex-direction: column;
-  }
+#dates {
+  color: $color-back;
+  background-color: $color-primary;
 
-  & .hero__content {
-    & h1 {
-      @include title();
+  margin-top: -1em;
+  padding: 1em;
+
+  & .dates__container {
+    @media (min-width: 1000px) {
+      width: 1000px;
     }
-    & h2 {
-      @include subtitle();
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+
+    & > h1 {
+      margin-top: 0.5em;
+      align-self: center;
+      font-weight: 700;
+    }
+    & > span {
+      align-self: flex-end;
+      margin: 0.25em;
+      letter-spacing: 0.5px;
+    }
+
+    & .dates__box {
+      color: $color-primary;
+      background-color: $color-back;
+      border-radius: 3px;
+
+      min-height: 20vh;
+
+      & .dates__box--selector {
+        padding: 1.5em 0.5em;
+        display: flex;
+        justify-content: space-around;
+        margin: 0 auto;
+        width: 50%;
+
+        & > span {
+          @include button();
+          background-color: $color-back;
+
+          &.active {
+            background-color: $color-highlight;
+          }
+        }
+      }
     }
   }
 }

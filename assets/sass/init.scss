@@ -1,3 +1,38 @@
+@mixin title {
+  font-family: $font-header;
+  font-size: 2.75rem;
+}
+
+@mixin subtitle {
+  font-family: $font-reg;
+  font-size: 2.15rem;
+}
+
+@mixin button {
+  cursor: pointer;
+  user-select: none;
+
+  padding: 0.5em;
+  border: 2px solid $color-primary;
+  border-radius: 5px;
+  background-color: $color-highlight;
+
+  font-family: $font-reg;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+
+  &:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25);
+  }
+
+  &:active {
+    transform: translate(0, 0);
+    box-shadow: 0 0 3px rgba($color-highlight, 0.75);
+  }
+}
+
 body {
   background-color: $color-back;
 }
@@ -11,12 +46,10 @@ a {
   transition: all 0.25s ease-in-out;
 }
 
-@mixin title {
-  font-family: $font-header;
-  font-size: 2.75rem;
+h1 {
+  @include title();
 }
 
-@mixin subtitle {
-  font-family: $font-reg;
-  font-size: 2.15rem;
+h2 {
+  @include subtitle();
 }

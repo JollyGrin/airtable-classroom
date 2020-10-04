@@ -1,0 +1,34 @@
+#hero {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  @media (min-width: 800px) {
+    //desktop
+    width: 700px;
+    justify-content: space-between;
+  }
+  @media (max-width: 799px) {
+    //mobile
+    width: 90%;
+    margin-left: 2em;
+    flex-direction: column;
+  }
+
+  & .hero__content {
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    & .hero__buttons {
+      display: flex;
+      justify-content: space-between;
+      & a {
+        @include button();
+      }
+    }
+  }
+  & .hero__right {
+    align-self: flex-end;
+  }
+}

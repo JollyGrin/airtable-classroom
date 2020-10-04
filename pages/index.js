@@ -2,25 +2,27 @@ import React, { Component } from 'react';
 import Layout from '../components/Layout';
 import { testFn } from '../assets/js/airtable';
 import Nav from '../components/Nav';
+import Hero from '../components/Hero';
 
 export default function Index({ gson, preview }) {
   return (
     <Layout>
       <Nav />
-      <section id='hero'>
-        <div className='hero__content'>
-          <h1>History 221</h1>
-          <h2>with Prof. Cicero</h2>
-          <div className='hero__buttons'>
-            <a>syllabus</a>
-            <a>ask a question</a>
+      <Hero />
+      <section id='dates'>
+        <div className='dates__container'>
+          <h1>Important Dates</h1>
+          <span>Last updated October 1st, 2020</span>
+          <div className='dates__box'>
+            <div className='dates__box--selector'>
+              <span className='active'>aug</span>
+              <span>sep</span>
+              <span>oct</span>
+              <span>nov</span>
+            </div>
           </div>
         </div>
-        <div>
-          <img src='media/hero-image.svg' />
-        </div>
       </section>
-      <section id='dates' />
     </Layout>
   );
 }
